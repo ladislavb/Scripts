@@ -189,7 +189,7 @@ foreach ($device in $managedDevices) {
                     if ($deviceGroupCache.($deviceGroup.DeviceGroupID) -contains $device.AzureAdDeviceId) {
                         "---> NO CHANGE NEEDED"
                     }
-                    # Device needs to be 
+                    # Device group membership needs to be updated
                     else {
                         "---> UPDATE"
                         # ToDo
