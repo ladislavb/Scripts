@@ -1,9 +1,26 @@
-##########################################################################################################################
-# PS script to assign Intune managed devices to device group(s) based on primary user group membership
-# Uses Microsoft.Graph module, is multiplatform and compatible with PowerShell Core 7.x
-# See https://docs.microsoft.com/en-us/powershell/microsoftgraph/?view=graph-powershell-1.0 for MS Graph PowerShell SDK documentation
-# Author: Ladislav Blažek <ladislav@lblazek.cz>
-##########################################################################################################################
+<#
+    .SYNOPSIS
+    PS script to assign Intune managed devices to device group(s) based on primary user group membership
+
+    .DESCRIPTION
+    PS script to assign Intune managed devices to specific device group(s) based on primary user group membership.
+    Device group can be then used to automatically assign scope tags to devices.
+    Hash table is used for user group to device group mapping.  
+    Script uses the new Microsoft.Graph module which is multiplatform and compatible with PowerShell Core 7.x
+    
+    Author: Ladislav Blažek <ladislav@lblazek.cz>
+    Copyright: Licensed under the MIT license. See LICENSE in the repository root for license information.
+
+    Version History
+    0.1    2022-09-09     Initial version
+    
+    .LINK
+    MS Graph PowerShell SDK documentation: https://docs.microsoft.com/en-us/powershell/microsoftgraph/?view=graph-powershell-1.0
+    
+    .LINK
+    Inspired by: https://github.com/scottbreenmsft/scripts/blob/master/Intune/RBAC/DeviceScopeTags/AddDeviceToGroupBasedOnPrimaryUserGroupMembership.ps1
+    
+#>
 
 # Tenant configuration for unattended usage
 # Leave empty for interactive script usage
