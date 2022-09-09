@@ -49,19 +49,29 @@ $enrolledWithinMinutes = 60
 
 # User group to device group mapping - device group can be used for automatic scope tag assignment
 # Object Id from AAD is needed for both group types
+# Replace User Group Object ID and Device Group Object ID with the real values
 # ========================================================================================================================
 
 $userGroup2DeviceGroupMapping=@()
 $hashTable = @{                         
-    UserGroupId = "ccade9ca-b78c-4835-83de-178b66c7d5b3"
-    DeviceGroupId = "a3a6b55c-75d3-4699-8bae-432b9326f618"
+    UserGroupId = "User Group Object ID"
+    DeviceGroupId = "Device Group Object ID"
 }                                              
 $userGroup2DeviceGroupMapping+=(New-Object PSObject -Property $hashTable)
+
+# Please copy the code between START & END lines for every additional group mapping
+<#
+--- START ---
 $hashTable = @{                       
-    UserGroupId = "User Group ID"
-    DeviceGroupId = "a3a6b55c-75d3-4699-8bae-432b9326f618"
+    UserGroupId = "User Group Object ID"
+    DeviceGroupId = "Device Group Object ID"
 }                                              
 $userGroup2DeviceGroupMapping+=(New-Object PSObject -Property $hashTable)
+--- END --- 
+#>
+# Include additional mappings under this line:
+
+
 
 # Microsoft.Graph module check
 # ========================================================================================================================
